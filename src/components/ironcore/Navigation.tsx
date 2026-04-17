@@ -71,7 +71,8 @@ export const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] bg-background lg:hidden flex flex-col"
+            className="fixed inset-0 z-[60] lg:hidden flex flex-col"
+            style={{ backgroundColor: "hsl(var(--background))" }}
           >
             <div className="container h-16 flex items-center justify-between border-b border-bg-tertiary">
               <Logo />
