@@ -76,12 +76,5 @@ export const Hero = () => (
       </motion.div>
     </div>
 
-    {/* Scroll indicator */}
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2">
-      <span className="font-body text-[10px] tracking-[0.3em] text-muted-foreground">SCROLL</span>
-      <div className="relative h-12 w-0.5 bg-bg-tertiary overflow-hidden rounded-full">
-        <span className="absolute top-0 left-0 w-0.5 h-3 bg-primary rounded-full animate-scroll-dot" />
-      </div>
-    </div>
   </section>
 );
