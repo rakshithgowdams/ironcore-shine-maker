@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "./Logo";
 import { Menu, Close, ArrowRight } from "./icons";
@@ -64,50 +65,54 @@ export const Navigation = () => {
         </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] bg-background lg:hidden flex flex-col"
-          >
-            <div className="container h-16 flex items-center justify-between border-b border-bg-tertiary">
-              <Logo />
-              <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2">
-                <Close className="w-6 h-6" />
-              </button>
-            </div>
-            <motion.nav
-              initial="hidden"
-              animate="visible"
-              variants={{ visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } }}
-              className="flex-1 flex flex-col items-center justify-center gap-8"
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed inset-0 z-[100] lg:hidden flex flex-col"
+              style={{ backgroundColor: "#0A0A0A" }}
             >
-              {links.map((l) => (
+              <div className="container h-16 flex items-center justify-between border-b border-bg-tertiary">
+                <Logo />
+                <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2 text-foreground">
+                  <Close className="w-6 h-6" />
+                </button>
+              </div>
+              <motion.nav
+                initial="hidden"
+                animate="visible"
+                variants={{ visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } }}
+                className="flex-1 flex flex-col items-center justify-center gap-8"
+              >
+                {links.map((l) => (
+                  <motion.a
+                    key={l.label}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                    className="font-display text-5xl text-foreground hover:text-primary transition-colors"
+                  >
+                    {l.label}
+                  </motion.a>
+                ))}
                 <motion.a
-                  key={l.label}
-                  href={l.href}
+                  href="#contact"
                   onClick={() => setOpen(false)}
                   variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                  className="font-display text-5xl text-foreground hover:text-primary transition-colors"
+                  className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-bold px-8 py-3 rounded-lg"
                 >
-                  {l.label}
+                  Book Now <ArrowRight className="w-4 h-4" />
                 </motion.a>
-              ))}
-              <motion.a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-bold px-8 py-3 rounded-lg"
-              >
-                Book Now <ArrowRight className="w-4 h-4" />
-              </motion.a>
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </header>
   );
 };
