@@ -75,20 +75,20 @@ const make = (faClass: string, defaultAnim: FAAnim = "") =>
   };
 
 // Utility / contact
-export const Phone = make("fa-solid fa-phone", "fa-shake");
-export const MapPin = make("fa-solid fa-location-dot", "fa-bounce");
-export const Mail = make("fa-solid fa-envelope", "fa-beat");
-export const Clock = make("fa-regular fa-clock", "fa-spin");
-export const Check = make("fa-solid fa-check", "fa-beat");
-export const ArrowRight = make("fa-solid fa-arrow-right", "fa-beat");
+export const Phone = make("fa-solid fa-phone");
+export const MapPin = make("fa-solid fa-location-dot");
+export const Mail = make("fa-solid fa-envelope");
+export const Clock = make("fa-regular fa-clock");
+export const Check = make("fa-solid fa-check");
+export const ArrowRight = make("fa-solid fa-arrow-right");
 export const Menu = make("fa-solid fa-bars");
 export const Close = make("fa-solid fa-xmark");
-export const Star = make("fa-solid fa-star", "fa-beat-fade");
+export const Star = make("fa-solid fa-star");
 export const Plus = make("fa-solid fa-plus");
 export const Search = make("fa-solid fa-magnifying-glass");
 export const Filter = make("fa-solid fa-filter");
-export const Upload = make("fa-solid fa-cloud-arrow-up", "fa-bounce");
-export const Play = make("fa-solid fa-play", "fa-beat");
+export const Upload = make("fa-solid fa-cloud-arrow-up");
+export const Play = make("fa-solid fa-play");
 export const Calendar = make("fa-regular fa-calendar");
 export const Briefcase = make("fa-solid fa-briefcase");
 
@@ -98,27 +98,27 @@ export const ChevronRight = make("fa-solid fa-chevron-right");
 export const ChevronDown = make("fa-solid fa-chevron-down");
 
 // Theme
-export const Sun = make("fa-solid fa-sun", "fa-spin");
-export const Moon = make("fa-solid fa-moon", "fa-beat-fade");
+export const Sun = make("fa-solid fa-sun");
+export const Moon = make("fa-solid fa-moon");
 
 // Social / brands
-export const Instagram = make("fa-brands fa-instagram", "fa-beat");
-export const Facebook = make("fa-brands fa-facebook", "fa-beat");
-export const Whatsapp = make("fa-brands fa-whatsapp", "fa-beat-fade");
-export const Linkedin = make("fa-brands fa-linkedin", "fa-beat");
-export const Google = make("fa-brands fa-google", "fa-beat-fade");
-export const Twitter = make("fa-brands fa-x-twitter", "fa-beat");
+export const Instagram = make("fa-brands fa-instagram");
+export const Facebook = make("fa-brands fa-facebook");
+export const Whatsapp = make("fa-brands fa-whatsapp");
+export const Linkedin = make("fa-brands fa-linkedin");
+export const Google = make("fa-brands fa-google");
+export const Twitter = make("fa-brands fa-x-twitter");
 
-// Service / feature icons (auto detailing context)
-export const SprayCan = make("fa-solid fa-spray-can-sparkles", "fa-bounce");
-export const Shield = make("fa-solid fa-shield-halved", "fa-beat");
-export const Sparkles = make("fa-solid fa-wand-magic-sparkles", "fa-beat-fade");
-export const Sofa = make("fa-solid fa-couch", "fa-fade");
-export const Layers = make("fa-solid fa-layer-group", "fa-fade");
-export const Engine = make("fa-solid fa-gears", "fa-spin");
-export const Eye = make("fa-solid fa-eye", "fa-beat-fade");
-export const Zap = make("fa-solid fa-bolt", "fa-flip");
-export const Crosshair = make("fa-solid fa-crosshairs", "fa-spin");
-export const Handshake = make("fa-solid fa-handshake", "fa-beat");
-export const Lightbulb = make("fa-solid fa-lightbulb", "fa-beat-fade");
-export const Target = make("fa-solid fa-bullseye", "fa-beat");
+// Service / feature icons
+export const SprayCan = make("fa-solid fa-spray-can-sparkles");
+export const Shield = make("fa-solid fa-shield-halved");
+export const Sparkles = make("fa-solid fa-wand-magic-sparkles");
+export const Sofa = make("fa-solid fa-couch");
+export const Layers = make("fa-solid fa-layer-group");
+export const Engine = make("fa-solid fa-gears");
+export const Eye = make("fa-solid fa-eye");
+export const Zap = make("fa-solid fa-bolt");
+export const Crosshair = make("fa-solid fa-crosshairs");
+export const Handshake = make("fa-solid fa-handshake");
+export const Lightbulb = make("fa-solid fa-lightbulb");
+export const Target = make("fa-solid fa-bullseye");
