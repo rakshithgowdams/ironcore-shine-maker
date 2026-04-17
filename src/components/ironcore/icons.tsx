@@ -65,8 +65,12 @@ const make = (faClass: string, defaultAnim: FAAnim = "") =>
         style={{
           fontSize,
           color,
-          display: "inline-block",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
           lineHeight: 1,
+          verticalAlign: "middle",
           ...style,
         }}
         aria-hidden="true"
