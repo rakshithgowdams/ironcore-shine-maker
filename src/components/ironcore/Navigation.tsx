@@ -67,12 +67,12 @@ export const Navigation = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] lg:hidden flex flex-col"
-            style={{ backgroundColor: "hsl(var(--background))" }}
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 z-[60] lg:hidden flex flex-col bg-background"
+            style={{ backgroundColor: "#0A0A0A" }}
           >
             <div className="container h-16 flex items-center justify-between border-b border-bg-tertiary">
               <Logo />
