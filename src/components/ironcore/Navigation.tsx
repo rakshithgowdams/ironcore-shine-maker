@@ -113,5 +113,6 @@ export const Navigation = () => {
         </AnimatePresence>,
         document.body
       )}
+    </header>
   );
 };
