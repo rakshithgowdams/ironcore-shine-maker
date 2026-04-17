@@ -1,9 +1,21 @@
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "./SectionHeader";
 import { ArrowRight } from "./icons";
+import g1 from "@/assets/gallery-1.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g3 from "@/assets/gallery-3.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+import g5 from "@/assets/gallery-5.jpg";
+import g6 from "@/assets/gallery-6.jpg";
 
-// TODO: Replace with actual detailing photos from IronCore portfolio
-const photos = [1, 2, 3, 4, 5, 6].map((i) => `https://picsum.photos/seed/ironcore-${i}/800/600`);
+const photos = [
+  { src: g1, label: "Ceramic Coating", car: "BMW 5 Series" },
+  { src: g2, label: "Paint Protection", car: "Sports Coupe" },
+  { src: g3, label: "Interior Detail", car: "Audi Q7" },
+  { src: g4, label: "Paint Correction", car: "Mercedes E-Class" },
+  { src: g5, label: "Engine Bay", car: "Luxury Sedan" },
+  { src: g6, label: "PPF Application", car: "Range Rover" },
+];
 
 export const Gallery = () => (
   <Section id="gallery" className="bg-background">
@@ -20,22 +32,32 @@ export const Gallery = () => (
       variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
       className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
     >
-      {photos.map((src, i) => (
+      {photos.map((p, i) => (
         <motion.a
-          key={src}
+          key={p.src}
           href="#"
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.25 }}
-          className={`group relative block overflow-hidden rounded-2xl border border-border ${
-            i % 5 === 0 ? "sm:col-span-2 lg:col-span-1" : ""
-          }`}
+          className="group relative block overflow-hidden rounded-2xl border border-border bg-bg-secondary"
         >
-          {/* TODO: Replace placeholder with real photo */}
-          <img src={src} alt={`IronCore detailing project ${i + 1}`} loading="lazy" className="w-full h-72 object-cover" />
-          <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-3">
-            <span className="font-display text-2xl text-foreground">Before / After</span>
-            <span className="font-body text-[11px] tracking-[0.3em] text-primary border border-primary rounded-full px-3 py-1">VIEW</span>
+          <img
+            src={p.src}
+            alt={`${p.label} on ${p.car} by IronCore Detailing`}
+            loading="lazy"
+            width={800}
+            height={640}
+            className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between">
+            <div>
+              <div className="font-body text-[10px] tracking-[0.3em] text-primary uppercase">{p.label}</div>
+              <div className="font-heading font-bold text-foreground text-lg mt-1">{p.car}</div>
+            </div>
+            <span className="font-body text-[11px] tracking-[0.2em] text-primary border border-primary rounded-full px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              VIEW
+            </span>
           </div>
         </motion.a>
       ))}
