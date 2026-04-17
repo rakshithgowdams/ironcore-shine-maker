@@ -9,7 +9,7 @@ export const Hero = () => (
     {/* Subtle orange glow */}
     <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
 
-    <div className="container relative z-10 py-24 text-center">
+    <div className="container relative z-10 py-24 text-center my-0 mx-0 px-0">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
