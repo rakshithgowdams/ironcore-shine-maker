@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Whatsapp, ArrowRight }
 import { toast } from "@/hooks/use-toast";
 
 const inputCls =
-  "w-full h-12 bg-bg-secondary border border-border-strong rounded-lg px-4 font-body text-[14px] text-foreground placeholder:text-text-muted input-dark transition-shadow outline-none";
+  "w-full h-12 bg-bg-secondary border border-border-strong rounded-lg text-[14px] text-foreground placeholder:text-text-muted input-dark transition-shadow outline-none px-[19px] my-[20px] border-none text-left font-serif";
 
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", vehicle: "", service: "Premium Detail", date: "", message: "" });
@@ -91,7 +91,7 @@ export const Contact = () => {
               <option>IronCore Elite</option>
               <option>Custom</option>
             </select>
-            <input type="date" value={form.date} onChange={set("date")} className={`${inputCls} text-muted-foreground`} />
+            <input type="date" value={form.date} onChange={set("date")} className="w-full h-12 bg-bg-secondary border border-border-strong rounded-lg px-4 font-body text-[14px] text-foreground placeholder:text-text-muted input-dark transition-shadow outline-none text-muted-foreground my-0" />
             <textarea
               value={form.message}
               onChange={set("message")}
