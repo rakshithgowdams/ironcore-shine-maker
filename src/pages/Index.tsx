@@ -1,16 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { TopBar } from "@/components/ironcore/TopBar";
+import { Navigation } from "@/components/ironcore/Navigation";
+import { Hero } from "@/components/ironcore/Hero";
+import { Stats } from "@/components/ironcore/Stats";
+import { Services } from "@/components/ironcore/Services";
+import { About } from "@/components/ironcore/About";
+import { Process } from "@/components/ironcore/Process";
+import { Pricing } from "@/components/ironcore/Pricing";
+import { Gallery } from "@/components/ironcore/Gallery";
+import { Testimonials } from "@/components/ironcore/Testimonials";
+import { VisionMission } from "@/components/ironcore/VisionMission";
+import { Contact } from "@/components/ironcore/Contact";
+import { Footer } from "@/components/ironcore/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <TopBar />
+      <Navigation />
+      <main>
+        <Hero />
+        <Stats />
+        <Services />
+        <About />
+        <Process />
+        <Pricing />
+        <Gallery />
+        <Testimonials />
+        <VisionMission />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
